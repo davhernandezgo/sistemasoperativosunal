@@ -1,0 +1,71 @@
+Sistemas Operativos ¿Que es? Caracteristicas, tipos, funcion, TODO sobre S.O.:
+
+"Un sistema operativo es un conjunto de programas que controla la ejecucion del software
+de aplicación y actúa como una interfaz entre el usuario y el hardware."Tambien es el 
+que permite la instalacion de software de aplicación.
+Facilita el manejo de los dispositivos, no se requieren muchos conocimientos para él manejo.
+Caracteristicas:
+-Habilidad para evolucionar. Las actualizaciones no deben interferirir en el funcionamiento
+del SO.
+-Comunicar los dispositivos.
+-Organiza datos para el acceso rapido y seguro, da prioridades.
+-Maneja las comunicaciones de red.
+-Facilita el acceso a dispositvos de entrada y de salida, recuperacion de errores.
+Tipos:
+-Con interfaz grafica tactil.
+-Multitareas.
+-Monotarea.
+-Monousario
+-Multiusuario
+Funciones y entorno:
+-Gestion del hardware y facilitar el trabajo del usuario. 
+-Administración de recursos.
+-Utilierias que complementan las tareas.
+
+Historia de los Sistemas Operativos:
+
+El primer sistema operativo fue el CTTS creado por el Centro de computacion(MIT, lanzado en 1961.
+El segundo el EXEC II creado por CSC, lanzado en 1962, luego lanzaron el EXEC 8 en 1964.
+El OS360 creado por IBM lanzado en 1965.
+UNIX creado por empleados de AT&T. De este sistema operativo se derivan varios, es uno 
+,uy importante.
+Batch 11 creado por DEC, lanzado en 1970.
+Entre sistemas operativos buscaban mejorar la interfaz grafica desde el Batch 11 empezaron
+a implementar la interfaz grafica.
+OSIB creado por DEC fue lanzado en 1971
+VM creado por IBM, sistema operativo de maquina virtual, 1972.
+AltoOS sin compañia, lanzado en 1963
+CPM-M: Desarrollado por Gary Kidell fue lanzado en 1966.
+Apple dos: Desde este punto empieza  la competencia de Apple y Microsoft. Fue lanzado en 1978.
+QDOS por Tim Paterson, fue lanzado en 1980.
+MSDOS es basado en x86, es igual a QDOS, Microsoft compro QDOS, 1981.
+SunOS desarrollado en 1982 por la compañia de San Microsystem.
+Ultrix en 1982 por DEC.
+LisaOS 1983 por Apple.
+Novell Netware desarrollado en 1983 por Novell.
+MacOS 1984 por Apple, actualizaciones hasta el dia de hoy, sacan versiones de el.
+Linux desde 1991 primero fue softaware propietario y luego se cambio a software libre.
+Sistema basado en Unix.
+Plan 9 en 1993 por Bell Labs, es software libre, su nucleo es hibrido.
+Windows 95 por Microsoft, mejor interfaz grafica, compatible con la arquitectura de 16 y
+32 bits.
+WindowsNT en 1996 por Microsoft, nucleo hibrido, 32 bits.
+Windows 2000 por Microsoft, nucleo hibrido, 32 bits.
+Windows XP 2001 Microsoft, nucleo hibrido, implementaron interfaz grafica mejor, su 
+arquitectura compatible con 32 y 64 bits.
+Ubuntu Linux en 2004, libre, arquitectura de 32 y 64 bits, parecido a MacOS.
+Mac OSX 10.4 2005, distribuido en CD/DVD.
+Windows Vista Microsoft 2007, nucleo hibrido, arquitectura de 32 y 64 bits.
+Windows 7 es igual a Windows Vista, Windows Vista es igual a Windows XP.
+Windows 7 Microsoft 2009, es mas estable que windows 8 8.1 y 10. Fue el que mas le gusto
+al publico.
+iOs Apple 2009 nucleo hibrido, compatible con todos los dispositivos Apple, primer SO
+para mobiles de Apple.
+Android SO basado en Linux, para dispositivos moviles.
+Windows Phone primer sistema operativo para moviles de Microsoft, lanzado en 2010.
+Windows 8 2012 un error fatal de Microsoft, fue mas pensado para dispositivos tactiles
+le quitaron la barra de inicio, muchos errores.
+Windows 10 ultimo SO de Microsoft, vuelve el menu de inicio, mantiene algo de la interfaz
+metro. Opciones para personalizar.
+Linux para moviles, no se puede descargar en linea, solo lo venden para dispositivos
+especiales. 
