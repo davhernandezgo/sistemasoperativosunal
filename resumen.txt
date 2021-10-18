@@ -1,0 +1,157 @@
+Estructura de los Sistemas Operativos - Lopaba Soluciones
+
+-Sistema monoliticos: Son los mas comunes debido a que su implementacion y diseño son
+los menos complejos, todos los componentes de gestion y programas del sistema estan escritos
+en el mismo codigo. Su ventaja es que al tener todo la misma prioridad tiene una mayor
+velocidad, su desventaja es que al todos compartir el mismo nivel de privilegio todo, 
+esto genera que haya problemas.
+
+-Sistema por capas: Su objetivo es separar la accion del codigo de los procesos del sistema,
+del nucleo y de los procesos de usuario, crea restricciones en cuanto a las llamadas
+de sistema que pueden ejecutar los procesos de cierta prioridad. Sus capas son:
+0 Asignacion del procesador y multiprogramacion.
+1 Administracion de memoria y multiprogramacion.
+2 Comunicacion operador-proceso.
+3 Administracion de la entrada/salida.
+4 Programas de usuario
+5 El operador.
+La ventaja es su depuracion y verificacion de procesos por capas. La desventaja
+es que consume muchos recursos, las llamadas entre capas.
+
+-Sistema de micronucleo: Es la combinacion entre el sistema de capas y el monolitico,
+obtener un nucleo lo mas pequeño y rapido posible, tratar el resto de funciones y componentes
+como procesos de aplicacion, el resto se ejecuta con el nivel minimo de privilegios.
+Su ventaja la descentralizacion de los fallos, la facilidad para crear y depurar controladores
+de dispositivo. su desventaja complejidad en la sincronizacion de los modulos que 
+componen el nucleo y su acceso a memoria.
+
+-Sistema cliente-servidor: El nucleo garantiza la comunicacion entre procesos, solo estan
+presentes el nucleo y los componentes minimos para la ejecucion, llamadas al sistema robustas.
+Sus ventajas son la centralizacion del control, escalabilidad y facil mantenimiento.
+Sus desventajas son la congestion del trafico, servidor caido no satisface peticiones,
+software y hardware especifico.
+----------------------------------------------------------------------------------------------------
+Microkernel - Estructuras de Sistemas Operativos
+
+Esta planteado como el nucleo de la estructura, tamaño reducido, dentro de el 
+componentes esenciales, se ejecuta en modo privilegiado, reducido numero de mecanismos,
+servicios del sistema se implementan en modo usuario por encima del microkernel, modo kernel
+modo usuario: cuenta con los mismos priveligios que las aplicaciones de usuario,
+el microkernel esta protegido de las aplicaciones de usuario y de los servicios de sistema,
+se necesita el microkernel para la intercomunicacion de procesos.
+Ventajas: Extensibilidad, agrega nueva funcionalidad en modo usuario.
+Mayor seguridad y fiabilidad.
+Simplicidad, facilita las correcciones de falla.
+Unifirmidad de interfaces.
+Desventajas: Bajo rendimiento por carga adicional.
+Bajo desempeño por llamadas primitivas.
+Complejidad de sincronizacion de los modulos.
+-----------------------------------------------------------------------------------------------------
+Sistemas Operativos - Clase 1 - Introducción
+
+Maquina desnuda: todos los recursos a cargo del programador.
+Sistemas de procesamiento por lotes: puntos de control, se tenia que rearrancar del punto.
+Los primeros SO fueron los humanos. Erroreres en el programa.
+Monitores residentes: se le podia decir que cargue descargue programas, sistema DOS.
+El SO es un software que controla y administra la maquina.
+No es suficiente ejecutar un programa a la vez.
+La primera funcion importante del SO administrar los recursos, es el unico que tiene el 
+control total, los demas deben pedir permiso.
+IBM hizo publico todo lo de la computadora personal.
+Hay muchas configuracion de maquinas distintas, hay que crear abstracciones. 
+La segunda funcion Abstraer el hardware.
+La tercera funcion ofrecer una interfaz de supervision, para controlar un humano el SO.
+Caracteristicas SO moderno:
+-Multitarea, cambio de contexto, tiempo compartido.
+-Multiusuario, capacidad de indentificar y autenticar diferentes usuarios y asignarles
+privilegios a ellos.
+limite fisico a 3.0 Ghz, caminos mas cortos para mas rapidez. Se agregaron mas nucleos
+-Multiprocesamiento: Capacidad de  administrar varios CPUs.
+ tipos:
+*Multiprocesamiento asimetrico: Repartir tareas entre todas, muchos CPUs colapsa.
+*multiprocesamiento simetrico: Son distribuidas, cada CPU corre codigo del SO.
+
+Implementar la multitarea:
+-Abstraer la memoria.
+-Abstraer el procesador.
+-Abstraer los perifericos.
+Un proceso es un programa en ejecucion.
+multitarea colaborativa: sin soporte de hardware:
+Todos los programas funcionan y cumplen con un protocolo:
+a) Devolver la CPU cuando necesitan algo de un periferico o despues de cierto tiempo.
+b) Entrar solamente a las zonas de memoria asignadas.
+Para algo mas duro se requiere soporte en hardware.
+-que el CPU distinga entre el codigo de SO y el codigo de los demas procesos. Se implementa
+con un sistema de anillos.
+El primer programa que se ejecuta en la CPU es el SO la recibe en el anillo 1.
+Salto largo para pasar de anillo 1 a anillo 2, para ejecutar codigo de un programa de usuario
+Para pasar del anillo 2 al anillo 1 se hace cuando se produce una interrupcion la CPU
+ejecuta el codigo de atencion de la interrupcion en anillo 1.
+
+Soporte para el manejo de interrupciones:
+-Mecanismo mediante el cual se puede interrumpir a la CPU y generar un salto a subrrutina
+especial, guardando el estado interno de la CPU, y ejecutando codigo ya especificado por el SO.
+La interrupcion se produce de tres formas:
+-Hardware, un dispositivo avisa a la CPU que tiene una novedad. A traves de lineas de solicitud
+de interrupcion(IRQ).
+-Excepcion, la CPU se interrumpe a si misma.
+-Software, el programa se interrumpe a si mismo.
+-----------------------------------------------------------------------------------------------------
+Sistemas Operativos - Clase 2 - Arquitectura de Sistemas Operativos - Historia (6/4/2020)
+
+Arquitectura de SO
+Depende de como queramos solucionar el problema.
+monolitico:
+Una sola pieza, todo corre en el anillo uno y mismo mapa de memoria.
+Los procesos <=> SO <=> Hardware
+3 capas: 
+Llamadas al sistema: mecanismos con interrupciones que los procesos envien informacion
+y viseversa.
+Drivers: Son rutinas que saben como interactuar con un hardware especifico o con artilugios de software.
+Abstracciones y los administradores: Administrador de memoria, CPU, todo lo de entrada/salida.
+Linux es monolitico
+Ventajas:
+-Eficiencia en la comunicacion entre los componentes del nucleo del SO.
+Desventajas:
+- Hay que ser prolijo y ordenado de programar o tocar componentes del SO, porque se produce
+"efecto mariposa"
+-impacta negativamente en la flexibilidad.
+-Pruebas dificiles de realizar.
+
+microkernel:
+En el anillo uno solo esta lo minimo e indispensable:
+-proteccion de memoria.
+-planificacion de procesos e hilos.
+-mecanismos de comunicacion entre procesos.
+Todo lo demas se va al anillo dos procesos de usuario.
+Problema:
+Es ineficiente comparado con el monolitico.
+Los primeros microkernels funcionaban 10 veces mas lento que los monoliticos.
+Si se mejora el IPC(comunicacion de procesos) el microkernel mejoraria, hoy en dia es casi
+igual de rapida que el monolitico.
+Windows NT es microkernel.GNU hurd=> Stallman utilizo Linux y HURD quedo atras.
+
+Abstracciones:
+-Memoria segundaria: memoria que esta conectada de forma inderecta al procesador, a 
+traves del bus de entrada/salida.
+--Disco rigido<- controladora de disco<- bus de entrada/salida especializado(SATA).<-
+  Controlador disco SATA(SO)<- controlador de SATA generico(Software)<-controlador SCSI
+  para SATA.<- Controlador SCSI.
+El nivel de SCSI es un nivel para hablar con dispositivos donde las operaciones tienen
+leer o escribir en forma aleatoria o secuencial.
+SCSI<- Dispositivo de Bloque<-Dispositivo de Caracter
+Dispositivo de bloque:
+-Acceso aleatorio de granualidad gruesa. Bloques de 512 bytes o mas.
+-Capacidad finita.
+-Direccionamiento lineal.
+Un dispositivo de caracter:
+-Solamente acceso secuencial.
+-Permite lectura y/o escritura de caracteres.
+En UNIX/LINUX/GNU-> El acceso a un dispositivo a nivel de bloque/caracter se mapea a
+nombres de archivos especiales. Estos archivos especiales se guardan en el directorio /dev.
+Archivos:
+-Dos componenetes abstractos:
+--El archivo: Conjunto de bytes que puede ser accedido en forma aleatoria y que puede
+  crecer y archivarse dinamicamente.
+--Directorio: Una lista de archivos y/o directorios.
+Para acceder a un archivo en windows se debe indicar un camino.
