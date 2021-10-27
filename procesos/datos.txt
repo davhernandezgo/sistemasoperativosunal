@@ -1,0 +1,10 @@
+Renglon 1
+Renglon 2
+Renglon 3
+Renglon 4
+Renglon 5
+Task A: Computing 0+1
+Task B: Computing 0+1
+Task A: Computing 1+2
+Task B: Computing 1+2
+Task B: Computing 3+3
