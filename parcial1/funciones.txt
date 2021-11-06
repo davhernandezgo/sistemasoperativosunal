@@ -1,0 +1,6 @@
+Funciones sistema operativo:
+Gestionar procesos o recursos para que los programas puedan ejecutarse de manera correcta.
+Administrar los puertos de entrada y salida, por ejemplo: micrófonos, altavoces, impresoras o el monitor.
+Garantizar la seguridad del ordenador, impidiendo el acceso a ciertos archivos o programas para el correcto funcionamiento del equipo.
+Administrar la memoria principal del dispositivo, de modo que aunque varios programas se pongan en marcha, cada uno cuente con una entrada de memoria independiente.
+Detectar errores, mantener la operatividad y controlar dispositivos, de manera que se eviten las interrupciones.
