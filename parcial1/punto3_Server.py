@@ -6,7 +6,6 @@ async def send_page(contenido):
     socketServidor = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     port = 443
     socketServidor.bind(('localhost', port))
-    print("Waiting for client \n")
     socketServidor.listen(1)
     connection, address = socketServidor.accept()
     connection.send(contenido.encode())
